@@ -1,0 +1,51 @@
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid $clr-bright;
+  height: 80px;
+  z-index: 1;
+  padding-block: 8px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // z-index: 100;
+
+  .logo {
+    display: flex;
+    object-fit: contain;
+    height: 32px;
+  }
+
+}
+
+.user-btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-host-btn {
+    margin-right: 25px;
+  }
+
+  .menu-icon {
+    margin-right: 10px;
+  }
+
+  .account-circle-icon {
+    width: 40px;
+  }
+}
+
+.btn-user-options {
+  display: flex;
+  align-items: center;
+  // max-width: fit-content;
+  padding: 8px;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+}
