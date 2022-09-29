@@ -10,7 +10,7 @@ import { StayHost } from '../cmps/stay/props/host'
 import { SPreview } from '../cmps/stay/preview'
 import { StaySummary } from '../cmps/stay/props/summery'
 // Cmps
-import { AirCover } from '../cmps/air-cover'
+import { AirCover } from '../cmps/stay/props/air-cover'
 
 export const StayDetails = () => {
     const [stay, setStay] = useState(null)

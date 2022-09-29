@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import routes from './routes'
-import './styles/main.scss'
-import { AppHeader } from './cmps/header'
+import './assets/styles/main.scss'
+import { AppHeader } from './cmps/app-header'
 
 function App() {
   return (

@@ -8,7 +8,7 @@
     }
 
     * {
-        font-family: ffregular;
+        font-family: cerealLt;
     }
 
     div.stay-details-row {
@@ -64,12 +64,12 @@
         }
 
         div {
-            font-family: ffbold;
+            font-family: cerealLt;
             padding-bottom: 10px;
         }
 
         span {
-            font-family: fflight;
+            font-family: cerealLt;;
             font-size: calc(100% - 2px)
         }
     }
@@ -109,7 +109,7 @@
         }
 
         .amenities {
-            font-family: fflight;
+            font-family: cerealLt;
             display: grid;
             gap: 16px;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
