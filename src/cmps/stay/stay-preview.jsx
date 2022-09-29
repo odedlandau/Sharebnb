@@ -25,12 +25,14 @@ export const StayPreview = ({ stay }) => {
   //   else likedByUsers.pop()
   // }
 
-  const addLikedList = () => {
+  const addLikedList = (ev) => {
+    ev.preventDefault()
     setIsLiked(!isLiked)
     heartPic = heartRed
   }
 
-  const moveIndex = () => {
+  const moveIndex = (ev) => {
+    ev.preventDefault()
     if ((idx + 1) >= stay.imgUrls.length) idx = 0
     else idx++
     setIdx(idx)
@@ -53,8 +55,8 @@ export const StayPreview = ({ stay }) => {
         <div className="preview-img-container square-ratio">
           <img className="preview-img" src={stay.imgUrls[idx]} alt="image" />
         </div>
-        <img className="heart-icon" src={heartPic} onClick={(ev) => { ev.preventDefault(); addLikedList() }} />
-        <div className="arrow-btn" onClick={(ev) => { ev.preventDefault(); moveIndex() }}>
+        <img className="heart-icon" src={heartPic} onClick={addLikedList} />
+        <div className="arrow-btn" onClick={moveIndex}>
           <img className="arrow-right" src={arrowRight} />
           <img className="arrow-left" src={arrowLeft} />
         </div>
@@ -62,13 +64,13 @@ export const StayPreview = ({ stay }) => {
         </div>
       </Link>
 
-        <div className="stay-info">
-          <p className="stay-name">{`${stay.loc.city}, ${stay.loc.country}`} <span><StarIcon className="star" />4.95</span></p>
-          <p className="stay-distance">1,109 kilometers</p>
-          <p className="stay-date">Nov 30 - Dec 5</p>
-        </div>
-        <p className="stay-price">{`$${stay.price} night`}</p>
-       
+      <div className="stay-info">
+        <p className="stay-name">{`${stay.loc.city}, ${stay.loc.country}`} <span className="rating"><StarIcon className="star" />4.95</span></p>
+        <p className="stay-distance">1,109 kilometers</p>
+        <p className="stay-date">Nov 30 - Dec 5</p>
+        <p className="stay-price">{`$${stay.price}`}<span>night</span></p>
+      </div>
+
     </li>
   )
 }

@@ -41,7 +41,7 @@ function _AppHeader({ onLogin, onSignup, onLogout, user }) {
                 </div>
 
 
-                {/* {user &&
+                {user &&
                 <span className="user-info">
                     <Link to={`user/${user._id}`}>
                     {user.imgUrl && <img src={user.imgUrl} />}
@@ -56,7 +56,7 @@ function _AppHeader({ onLogin, onSignup, onLogout, user }) {
                     <section className="user-info">
                     <LoginSignup onLogin={onLogin} onSignup={onSignup} />
                     </section>
-                } */}
+                }
 
             </div>
         </header >

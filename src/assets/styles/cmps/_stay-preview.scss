@@ -1,14 +1,9 @@
 .stay-preview {
   cursor: pointer;
   position: relative;
-  // a {
-  //   position: relative;
-  // }
 
   .preview-img-container {
-    box-shadow: 3px 4px 6px #00000026;
     border-radius: 12px;
-
   }
 
   .heart-icon {
@@ -50,24 +45,33 @@
   }
 
   & .stay-name {
-    // font-family: cereal3;
     display: flex;
     justify-content: space-between;
     // align-items: center;
     margin-top: 10px;
 
-    .star {
-      font-size: rem(15px);
-      margin-right: 5px;
+    .rating {
+      font-family: cereal1;
+
+      .star {
+        font-size: rem(14px);
+        margin-right: rem(4px);
+      }
     }
   }
 
   & .stay-distance,
   .stay-date {
-    color: $clr-bgc;
+    font-family: cereal1;
+    color: $clr3;
   }
 
   & .stay-price {
     margin-top: 8px;
+
+    & span {
+      margin-left: rem(5px);
+      font-family: cereal1;
+    }
   }
 }
