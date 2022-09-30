@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StayFilter } from '../cmps/stay/filter'
-import { StayList } from '../cmps/stay/list'
+import { StayList } from '../cmps/stay/stay-list'
 import { loadStays, removeStay, setFilterBy, sortByStays } from '../store/stay.action'
 
-export const App = () => {
+export const HomePage = () => {
     const stays = useSelector((state) => state.stayModule.stays)
     const dispatch = useDispatch()
     useEffect(() => {
@@ -26,10 +26,10 @@ export const App = () => {
 
     if (!stays) return <h1>Loading...</h1>
     return (
-        <section className="stay-app">
+        <section className="home-page">
             <div className="viewport"></div>
             {/* <StayFilter onChangeFilter={onChangeFilter} /> */}
-            <StayList onRemoveStay={onRemoveStay} stays={stays} />
+            <StayList stays={stays} />
         </section>
     )
 }

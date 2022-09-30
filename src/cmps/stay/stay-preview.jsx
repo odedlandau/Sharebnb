@@ -25,44 +25,50 @@ export const StayPreview = ({ stay }) => {
   //   else likedByUsers.pop()
   // }
 
+  const moveIndex = (arrow) => {
+    if (arrow === "right") idx++
+    else idx--
+    setIdx(idx)
+  }
+
   const addLikedList = (ev) => {
     ev.preventDefault()
     setIsLiked(!isLiked)
     heartPic = heartRed
   }
 
-  const moveIndex = (ev) => {
-    ev.preventDefault()
-    if ((idx + 1) >= stay.imgUrls.length) idx = 0
-    else idx++
-    setIdx(idx)
-  }
-
-  // if (!stay.isLiked) heartPic = heartIcon
-  // else heartPic = heartRed
-  // if (!stay) return
-
   return (
-    <li className="clean-list stay-preview">
+    <section className="stay-preview">
 
-      {/* <div className="preview-img-container square-ratio">
-          <Carousel>
-            {stay.imgUrls.map((imgUrl) => <img key={imgUrl} src={imgUrl} alt="image" />)}
-          </Carousel>
-        </div> */}
+      <Carousel className="carousel-wrapper"
+        autoPlay={false}
+        cycleNavigation={false}
+        animation={"slide"}
+        navButtonsProps={{
+          style: {
+            backgroundColor: "#ffffff",
+            color: "#222222",
+          },
+        }}>
+        {stay.imgUrls.map(imgUrl =>
+          <Link to={`/stay/${stay._id}`}>
+            <div className="preview-img-container">
+              <img key={imgUrl} src={imgUrl} alt="image" />
+            </div>
+          </Link>
+        )}
+      </Carousel>
 
-      <Link to={`/stay/${stay._id}`}>
+
+      {/* <Link to={`/stay/${stay._id}`}>
         <div className="preview-img-container square-ratio">
           <img className="preview-img" src={stay.imgUrls[idx]} alt="image" />
         </div>
-        <img className="heart-icon" src={heartPic} onClick={addLikedList} />
-        <div className="arrow-btn" onClick={moveIndex}>
-          <img className="arrow-right" src={arrowRight} />
-          <img className="arrow-left" src={arrowLeft} />
-        </div>
-        <div>
-        </div>
-      </Link>
+      </Link> */}
+
+      <img className="heart-icon" src={heartPic} onClick={addLikedList} />
+      {/* <img className="arrow-right" src={arrowRight} onClick={() => moveIndex("right")} />
+      <img className="arrow-left" src={arrowLeft} onClick={() => moveIndex("left")} /> */}
 
       <div className="stay-info">
         <p className="stay-name">{`${stay.loc.city}, ${stay.loc.country}`} <span className="rating"><StarIcon className="star" />4.95</span></p>
@@ -70,7 +76,6 @@ export const StayPreview = ({ stay }) => {
         <p className="stay-date">Nov 30 - Dec 5</p>
         <p className="stay-price">{`$${stay.price}`}<span>night</span></p>
       </div>
-
-    </li>
+    </section >
   )
 }
